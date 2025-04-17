@@ -7,6 +7,47 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__links">
+          <a href="/" class="navbar__logo logo">
+            <img
+              src="/assets/icons/forma_default.svg"
+              alt="Logo company Forma’sint."
+            />
+            <span>Forma’sint.</span>
+          </a>
+          <a class="hide-mobile" href="https://idomods.pl/" target="_blank"
+            >idomods &lt;/&gt;</a
+          >
+        </div>
+        <button id="menu" class="navbar__hamburger">
+          <img id="menu-img" src="/assets/icons/menu_hamburger.svg" alt="" />
+          <span id="menu-text">Menu</span>
+        </button>
+        <div class="mobile-nav-logo">
+          <img src="/assets/icons/forma_default.svg" />
+        </div>
+        <ul class="navbar__list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#featured-products">Featured products</a></li>
+          <li><a href="#product-listing">Product listing</a></li>
+        </ul>
+        <div class="navbar__user hide-mobile">
+          <img src="/assets/icons/user.svg" alt="user icon" />
+          <button type="button">Frontend developer</button>
+        </div>
+      </nav>
+      <section id="home" class="home">
+        <div>
+          <img class="home__logo" src="/assets/images/logo_small.png" alt="" />
+        </div>
+
+        <img class="home__hero" src="/assets/images/hero.png" alt="" />
+      </section>
+    </header>
+    <main></main>
+
     <script src="script.js"></script>
   </body>
 </html>
