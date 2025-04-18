@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zadanie rekrutacyjne - IdoMods</title>
     <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
@@ -44,8 +50,117 @@
         <img class="home__hero" src="/assets/images/hero.png" alt="" />
       </section>
     </header>
-    <main></main>
+    <main>
+      <section id="featured-products" class="featured">
+        <span>featured products</span>
+        <h1>Browse featured</h1>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img class="heart" src="/assets/icons/heart_default.svg" />
+                <img src="/assets/images/product_photo.png" />
+              </div>
+              <div class="card__text">
+                <p class="large">Dark blue alphine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--limited-edition">Limited edition</p>
+                <img class="heart" src="/assets/icons/heart_default.svg" />
+                <img src="/assets/images/product_photo.png" />
+              </div>
+              <div class="card__text">
+                <p class="large">Dark blue alphine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img class="heart" src="/assets/icons/heart_default.svg" />
+                <img src="/assets/images/product_photo.png" />
+              </div>
+              <div class="card__text">
+                <p class="large">Dark blue alphine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img class="heart" src="/assets/icons/heart_default.svg" />
+                <img src="/assets/images/product_photo.png" />
+              </div>
+              <div class="card__text">
+                <p class="large">Dark blue alphine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img class="heart" src="/assets/icons/heart_default.svg" />
+                <img src="/assets/images/product_photo.png" />
+              </div>
+              <div class="card__text">
+                <p class="large">Dark blue alphine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img class="heart" src="/assets/icons/heart_default.svg" />
+                <img src="/assets/images/product_photo.png" />
+              </div>
+              <div class="card__text">
+                <p class="large">Dark blue alphine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img class="heart" src="/assets/icons/heart_default.svg" />
+                <img src="/assets/images/product_photo.png" />
+              </div>
+              <div class="card__text">
+                <p class="large">Dark blue alphine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+          </div>
+          <div class="btn-prev"></div>
+          <div class="btn-next"></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 16,
+        direction: "horizontal",
+        breakpoints: {
+          991: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+          },
+        },
+        navigation: {
+          nextEl: ".btn-next",
+          prevEl: ".btn-prev",
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    </script>
   </body>
 </html>
