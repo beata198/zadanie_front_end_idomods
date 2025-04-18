@@ -103,12 +103,17 @@ button {
 
 .home__logo {
   width: auto;
-  height: auto;
-  padding: 0 0 24px 0;
+  height: 50px;
+  background-image: url("/assets/images/logo_small.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin: 0 0 24px 0;
 }
 
 .home__hero {
   width: 100%;
+  height: auto;
+  min-height: 200px;
   flex: 1;
   object-fit: cover;
   border-radius: 8px;
@@ -139,7 +144,9 @@ button {
     display: none;
   }
   .home__logo {
-    padding: 0 0 42px 0;
+    height: 138px;
+    background-image: url("/assets/images/logo.png");
+    margin: 0 0 42px 0;
   }
   .home {
     height: calc(100vh - 88px);
