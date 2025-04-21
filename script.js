@@ -5,31 +5,20 @@ const menuOverlay = document.querySelector(".menu-overlay");
 const menuMobile = document.querySelector(".sidebar");
 const menuLinks = document.querySelectorAll(".sidebar li a");
 
-console.log(menuMobile);
 let isOpen = false;
 
-openMenu.addEventListener("click", () => {
-  if (!isOpen) {
-    isOpen = true;
-    menuMobile.classList.add("active");
-    menuOverlay.classList.add("active");
-    document.body.style.overflow = "hidden";
-  }
-});
+const toggleMenu = (state) => {
+  isOpen = state;
+  menuMobile.classList.toggle("active", state);
+  menuOverlay.classList.toggle("active", state);
+  document.body.style.overflow = state ? "hidden" : "";
+};
 
-closeMenu.addEventListener("click", () => {
-  isOpen = false;
-  menuMobile.classList.remove("active");
-  menuOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-});
+openMenu.addEventListener("click", () => toggleMenu(true));
+closeMenu.addEventListener("click", () => toggleMenu(false));
 
 menuLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    console.log("działa");
-    isOpen = false;
-    menuMobile.classList.remove("active");
-    menuOverlay.classList.remove("active");
-    document.body.style.overflow = "";
-  });
+  link.addEventListener("click", () => toggleMenu(false));
 });
+
+menuOverlay.addEventListener("click", () => toggleMenu(false));
