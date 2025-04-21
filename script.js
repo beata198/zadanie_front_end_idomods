@@ -136,3 +136,61 @@ window.addEventListener("scroll", async () => {
     currentPage++;
   }
 });
+
+// Modal
+const modalClose = document.querySelector(".modal__close");
+const productModal = document.getElementById("product-modal");
+
+const openModal = (id, img) => {
+  productModal.querySelector(".modal__id").textContent = `ID: ${
+    id >= 10 ? id : "0" + id
+  }`;
+  productModal.querySelector(".modal__image").src = img;
+  console.log(img);
+
+  productModal.classList.remove("hidden");
+};
+
+modalClose.addEventListener("click", () => {
+  productModal.classList.add("hidden");
+});
+
+productsGrid.addEventListener("click", (e) => {
+  const product = e.target.closest(".product");
+
+  const id = product.dataset.id;
+  const img = product.dataset.src;
+
+  openModal(id, img);
+});
+
+productModal.addEventListener("click", (e) => {
+  if (!e.target.closest(".modal__content")) {
+    productModal.classList.add("hidden");
+  }
+});
+
+// Fill logo on hover
+const logo = document.querySelector(".navbar__logo");
+const logoImg = document.querySelector(".logo-img");
+
+logo.addEventListener("mouseenter", () => {
+  logoImg.src = "/assets/icons/forma_fill.svg";
+});
+
+logo.addEventListener("mouseleave", () => {
+  logoImg.src = "/assets/icons/forma_default.svg";
+});
+
+// Fill heart on hover
+const hearts = document.querySelectorAll(".heart");
+
+hearts.forEach((heart) => {
+  heart.addEventListener("mouseenter", () => {
+    heart.src = "/assets/icons/heart_fill.svg";
+  });
+
+  heart.addEventListener("mouseleave", () => {
+    heart.src = "/assets/icons/heart_default.svg";
+  });
+});
