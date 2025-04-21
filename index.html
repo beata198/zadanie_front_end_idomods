@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zadanie rekrutacyjne - IdoMods</title>
     <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -27,9 +28,9 @@
             >idomods &lt;/&gt;</a
           >
         </div>
-        <button id="menu" class="navbar__hamburger">
-          <img id="menu-img" src="/assets/icons/menu_hamburger.svg" alt="" />
-          <span id="menu-text">Menu</span>
+        <button id="open-menu" class="navbar__hamburger">
+          <img src="/assets/icons/menu_hamburger.svg" alt="" />
+          <span>Menu</span>
         </button>
         <div class="mobile-nav-logo">
           <img src="/assets/icons/forma_default.svg" />
@@ -39,11 +40,28 @@
           <li><a href="#featured-products">Featured products</a></li>
           <li><a href="#product-listing">Product listing</a></li>
         </ul>
+        <div class="menu-overlay"></div>
+        <div class="sidebar">
+          <div class="sidebar__head">
+            <a href="/"><img src="/assets/icons/forma_default.svg" alt="" /></a>
+
+            <button id="close-menu" class="sidebar__button">
+              <img src="/assets/icons/close.svg" />Close
+            </button>
+          </div>
+          <ul class="sidebar__list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#featured-products">Featured products</a></li>
+            <li><a href="#product-listing">Product listing</a></li>
+          </ul>
+        </div>
+
         <div class="navbar__user hide-mobile">
           <img src="/assets/icons/user.svg" alt="user icon" />
           <button type="button">Frontend developer</button>
         </div>
       </nav>
+
       <section id="home" class="home">
         <div class="home__logo"></div>
 
@@ -143,53 +161,13 @@
         <form>
           <label for="products">Number of products per page</label>
           <select id="products" name="products">
-            <option value="">14</option>
-            <option value="">24</option>
-            <option value="">36</option>
+            <option value="14">14</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
           </select>
         </form>
         <div class="products__grid">
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="banner">
+          <div id="banner" class="banner hidden">
             <div>
               <p class="banner__logo">Forma’sint.</p>
               <p class="banner__text">
@@ -201,43 +179,10 @@
               <img src="/assets/icons/chevron_right.svg" alt="" />
             </button>
           </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
-          <div class="product">
-            <p class="product__id">ID: 01</p>
-            <img
-              class="product__img"
-              src="/assets/images/product_photo.png"
-              alt=""
-            />
-          </div>
         </div>
       </section>
     </main>
 
-    <script src="script.js"></script>
     <script>
       const swiper = new Swiper(".swiper", {
         slidesPerView: "auto",
