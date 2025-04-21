@@ -19,6 +19,7 @@
         <div class="navbar__links">
           <a href="/" class="navbar__logo logo">
             <img
+              class="logo-img"
               src="/assets/icons/forma_default.svg"
               alt="Logo company Forma’sint."
             />
@@ -166,23 +167,19 @@
             <option value="36">36</option>
           </select>
         </form>
-        <div class="products__grid">
-          <div id="banner" class="banner hidden">
-            <div>
-              <p class="banner__logo">Forma’sint.</p>
-              <p class="banner__text">
-                You'll look and feel like the champion.
-              </p>
-            </div>
-            <button>
-              <p>Check this out</p>
-              <img src="/assets/icons/chevron_right.svg" alt="" />
-            </button>
-          </div>
-        </div>
+        <div class="products__grid"></div>
       </section>
     </main>
-
+    <div id="product-modal" class="modal hidden">
+      <div class="modal__content">
+        <p class="modal__id"></p>
+        <img class="modal__image" src="" alt="" />
+        <button class="modal__close">
+          <img src="/assets/icons/close.svg" alt="" />Close
+        </button>
+        <div class="modal__body"></div>
+      </div>
+    </div>
     <script>
       const swiper = new Swiper(".swiper", {
         slidesPerView: "auto",
