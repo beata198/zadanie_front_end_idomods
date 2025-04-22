@@ -36,6 +36,7 @@ selectNumberProducts.addEventListener("change", async () => {
 
   productsGrid.innerHTML = "";
   currentPage = 1;
+
   await fetchProducts(currentPage, limitProducts);
 });
 
@@ -59,10 +60,12 @@ const createBanner = () => {
   content.appendChild(p2);
 
   const button = document.createElement("button");
+  button.ariaLabel = "Check out our latest collection";
   const p3 = document.createElement("p");
   p3.textContent = "Check this out";
   const imgBtn = document.createElement("img");
   imgBtn.src = "/assets/icons/chevron_right.svg";
+  imgBtn.alt = "Go to check collection";
 
   button.appendChild(p3);
   button.appendChild(imgBtn);
@@ -99,7 +102,6 @@ const createProduct = (product) => {
 };
 
 const fetchProducts = async (page, limit) => {
-  console.log(page, currentPage);
   try {
     const res = await fetch(
       `https://brandstestowy.smallhost.pl/api/random?pageNumber=${page}&pageSize=${limit}`
@@ -120,20 +122,18 @@ const fetchProducts = async (page, limit) => {
     }
   } catch (err) {
     productsGrid.textContent = err.message;
-    console.log(err.message);
   }
 };
 
 fetchProducts(currentPage, limitProducts);
-currentPage++;
 
 window.addEventListener("scroll", async () => {
   const nearBottom =
-    window.innerHeight + window.scrollY >= document.body.offsetHeight;
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
 
   if (nearBottom) {
-    await fetchProducts(currentPage, limitProducts);
     currentPage++;
+    await fetchProducts(currentPage, limitProducts);
   }
 });
 
@@ -146,7 +146,6 @@ const openModal = (id, img) => {
     id >= 10 ? id : "0" + id
   }`;
   productModal.querySelector(".modal__image").src = img;
-  console.log(img);
 
   productModal.classList.remove("hidden");
 };
@@ -173,6 +172,7 @@ productModal.addEventListener("click", (e) => {
 // Fill logo on hover
 const logo = document.querySelector(".navbar__logo");
 const logoImg = document.querySelector(".logo-img");
+logoImg.alt = "Mountain Gear Store Logo - Letter F Icon";
 
 logo.addEventListener("mouseenter", () => {
   logoImg.src = "/assets/icons/forma_fill.svg";
