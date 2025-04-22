@@ -4,14 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zadanie rekrutacyjne - IdoMods</title>
+    <meta
+      name="description"
+      content="Discover premium outdoor gear for every adventure. Shop high-performance jackets, climbing helmets, backpacks, and more. Built for hikers, climbers, and explorers."
+    />
+    <meta
+      name="keywords"
+      content="outdoor gear, hiking equipment, climbing gear, mountain jackets, helmets for climbing, hiking jackets, trekking gear, alpine clothing, outdoor store, adventure equipment"
+    />
     <link href="style.css" rel="stylesheet" />
-    <script src="script.js" defer></script>
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,7 +31,7 @@
             <img
               class="logo-img"
               src="/assets/icons/forma_default.svg"
-              alt="Logo company Forma’sint."
+              alt="Mountain Gear Store Logo - Letter F Icon"
             />
             <span>Forma’sint.</span>
           </a>
@@ -29,8 +39,11 @@
             >idomods &lt;/&gt;</a
           >
         </div>
-        <button id="open-menu" class="navbar__hamburger">
-          <img src="/assets/icons/menu_hamburger.svg" alt="" />
+        <button id="open-menu" class="navbar__hamburger" aria-label="Open menu">
+          <img
+            src="/assets/icons/menu_hamburger.svg"
+            alt="Open Navigation Menu"
+          />
           <span>Menu</span>
         </button>
         <div class="mobile-nav-logo">
@@ -46,8 +59,15 @@
           <div class="sidebar__head">
             <a href="/"><img src="/assets/icons/forma_default.svg" alt="" /></a>
 
-            <button id="close-menu" class="sidebar__button">
-              <img src="/assets/icons/close.svg" />Close
+            <button
+              id="close-menu"
+              class="sidebar__button"
+              aria-label="Close menu"
+            >
+              <img
+                src="/assets/icons/close.svg"
+                alt="Close Navigation Menu"
+              />Close
             </button>
           </div>
           <ul class="sidebar__list">
@@ -58,8 +78,13 @@
         </div>
 
         <div class="navbar__user hide-mobile">
-          <img src="/assets/icons/user.svg" alt="user icon" />
-          <button type="button">Frontend developer</button>
+          <img
+            src="/assets/icons/user.svg"
+            alt="User Account Icon - Login or Register"
+          />
+          <button type="button" aria-label="Open user account">
+            Frontend developer
+          </button>
         </div>
       </nav>
 
@@ -74,12 +99,19 @@
         <span>featured products</span>
         <h1>Browse featured</h1>
         <div class="swiper">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper" id="product-wrapper">
             <div class="swiper-slide">
               <div class="card">
                 <p class="tag tag--bestseller">BESTSELLER</p>
-                <img class="heart" src="/assets/icons/heart_default.svg" />
-                <img src="/assets/images/product_photo.png" />
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_01.png"
+                />
               </div>
               <div class="card__text">
                 <p class="large">Dark blue alphine climbing jacket</p>
@@ -89,8 +121,68 @@
             <div class="swiper-slide">
               <div class="card">
                 <p class="tag tag--limited-edition">Limited edition</p>
-                <img class="heart" src="/assets/icons/heart_default.svg" />
-                <img src="/assets/images/product_photo.png" />
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_02.png"
+                />
+              </div>
+              <div class="card__text">
+                <p class="large">Orange helmet for alpine TOUNDRA</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_03.png"
+                />
+              </div>
+              <div class="card__text">
+                <p class="large">Grey alpine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_01.png"
+                />
+              </div>
+              <div class="card__text">
+                <p class="large">Grey alpine climbing jacket</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <p class="tag tag--bestseller">BESTSELLER</p>
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_01.png"
+                />
               </div>
               <div class="card__text">
                 <p class="large">Dark blue alphine climbing jacket</p>
@@ -99,56 +191,54 @@
             </div>
             <div class="swiper-slide">
               <div class="card">
-                <p class="tag tag--bestseller">BESTSELLER</p>
-                <img class="heart" src="/assets/icons/heart_default.svg" />
-                <img src="/assets/images/product_photo.png" />
+                <p class="tag tag--limited-edition">Limited edition</p>
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_02.png"
+                />
               </div>
               <div class="card__text">
-                <p class="large">Dark blue alphine climbing jacket</p>
+                <p class="large">Orange helmet for alpine TOUNDRA</p>
+                <p>€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_03.png"
+                />
+              </div>
+              <div class="card__text">
+                <p class="large">Grey alpine climbing jacket</p>
                 <p>€300,00 EUR</p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="card">
                 <p class="tag tag--bestseller">BESTSELLER</p>
-                <img class="heart" src="/assets/icons/heart_default.svg" />
-                <img src="/assets/images/product_photo.png" />
+                <img
+                  class="heart"
+                  src="/assets/icons/heart_default.svg"
+                  alt="Add to Favorites or Wishlist"
+                />
+                <img
+                  class="card__img"
+                  src="/assets/images/product_photo_01.png"
+                />
               </div>
               <div class="card__text">
-                <p class="large">Dark blue alphine climbing jacket</p>
-                <p>€300,00 EUR</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <p class="tag tag--bestseller">BESTSELLER</p>
-                <img class="heart" src="/assets/icons/heart_default.svg" />
-                <img src="/assets/images/product_photo.png" />
-              </div>
-              <div class="card__text">
-                <p class="large">Dark blue alphine climbing jacket</p>
-                <p>€300,00 EUR</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <p class="tag tag--bestseller">BESTSELLER</p>
-                <img class="heart" src="/assets/icons/heart_default.svg" />
-                <img src="/assets/images/product_photo.png" />
-              </div>
-              <div class="card__text">
-                <p class="large">Dark blue alphine climbing jacket</p>
-                <p>€300,00 EUR</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <p class="tag tag--bestseller">BESTSELLER</p>
-                <img class="heart" src="/assets/icons/heart_default.svg" />
-                <img src="/assets/images/product_photo.png" />
-              </div>
-              <div class="card__text">
-                <p class="large">Dark blue alphine climbing jacket</p>
+                <p class="large">Grey alpine climbing jacket</p>
                 <p>€300,00 EUR</p>
               </div>
             </div>
@@ -174,7 +264,7 @@
       <div class="modal__content">
         <p class="modal__id"></p>
         <img class="modal__image" src="" alt="" />
-        <button class="modal__close">
+        <button class="modal__close" aria-label="Close modal">
           <img src="/assets/icons/close.svg" alt="" />Close
         </button>
         <div class="modal__body"></div>
