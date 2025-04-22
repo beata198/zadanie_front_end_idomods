@@ -58,6 +58,11 @@ button {
   text-transform: uppercase;
   font-family: var(--font-family);
   cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .active {
