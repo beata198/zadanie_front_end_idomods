@@ -508,7 +508,7 @@ button {
   }
   .swiper-slide {
     /* width: 100% !important; */
-    max-width: 437.5px;
+    max-width: 437.25px;
   }
   .btn-next {
     right: 32px;
