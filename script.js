@@ -111,10 +111,12 @@ const fetchProducts = async (page, limit) => {
     }
     const data = await res.json();
 
-    data.data.map((el) => {
-      product = createProduct(el);
-      productsGrid.appendChild(product);
-    });
+    if (data.totalPages >= data.currentPage) {
+      data.data.map((el) => {
+        product = createProduct(el);
+        productsGrid.appendChild(product);
+      });
+    }
 
     if (!productsGrid.querySelector(".banner")) {
       const banner = createBanner();
@@ -127,13 +129,20 @@ const fetchProducts = async (page, limit) => {
 
 fetchProducts(currentPage, limitProducts);
 
+let isLoading = false;
 window.addEventListener("scroll", async () => {
+  const gridHeight = productsGrid.offsetHeight;
+
+  if (gridHeight === 0 || isLoading) return;
+
   const nearBottom =
     window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
 
   if (nearBottom) {
+    isLoading = true;
     currentPage++;
     await fetchProducts(currentPage, limitProducts);
+    isLoading = false;
   }
 });
 
